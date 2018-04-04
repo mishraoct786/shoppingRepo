@@ -41,9 +41,9 @@
       <property name="entityManagerFactory" ref="entityManagerFactory" />
    </bean>
   
-   <bean id="encoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder">
+   <!-- <bean id="encoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder">
     <constructor-arg value ="12">
-    </constructor-arg>  </bean>
+    </constructor-arg>  </bean> -->
    <bean  class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor"/>
     
     <tx:annotation-driven transaction-manager="transactionManager"/>
