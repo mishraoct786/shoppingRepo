@@ -2,10 +2,14 @@ package org.mishra.com.entity;
 
 import java.io.Serializable;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Customer implements Serializable {
@@ -22,18 +26,20 @@ public class Customer implements Serializable {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long idClent;
 	
+	@Column
 	private String nonClient;
-	private String email;
-	private String phone;
-	private String address;
 	
-	public Customer(String nonClient, String email, String phone, String address) {
-		//super();
-		this.nonClient = nonClient;
-		this.email = email;
-		this.phone = phone;
-		this.address = address;
-	}
+	@Column
+	private String email;
+	
+	@Column
+	private String phone;
+	
+	@JoinColumn
+	private Address address;
+	
+
+	
 	public Long getIdClent() {
 		return idClent;
 	}
@@ -58,10 +64,12 @@ public class Customer implements Serializable {
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
-	public String getAddress() {
+	
+	@OneToOne(cascade = CascadeType.ALL)
+	public Address getAddress() {
 		return address;
 	}
-	public void setAddress(String address) {
+	public void setAddress(Address address) {
 		this.address = address;
 	}
 	

@@ -6,7 +6,7 @@ import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.validation.constraints.Size;
 
-import org.hibernate.validator.constraints.NotEmpty;
+
 
 @Entity
 public class Categories {
@@ -14,7 +14,7 @@ public class Categories {
 	@GeneratedValue
 	private long idCategorie;
 	
-	@NotEmpty
+	//@NotEmpty
 	@Size(max=4,min=20)
 	
 	private String nonCategorie;
