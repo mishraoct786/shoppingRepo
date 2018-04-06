@@ -1,6 +1,7 @@
 package org.mishra.com.entity;
 
 import java.io.Serializable;
+import java.util.Collection;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -9,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 @Entity
@@ -24,10 +26,10 @@ public class Customer implements Serializable {
 	}
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private Long idClent;
+	private Long idCustomer;
 	
 	@Column
-	private String nonClient;
+	private String nonCustomer;
 	
 	@Column
 	private String email;
@@ -36,21 +38,30 @@ public class Customer implements Serializable {
 	private String phone;
 	
 	@JoinColumn
-	private Address address;
+	@OneToMany(mappedBy="customer")
+	private Collection <Address> address;
 	
-
+	@OneToMany(mappedBy="client")
+	private Collection  <Activity> activity;
 	
-	public Long getIdClent() {
-		return idClent;
+	
+	public Collection<Activity> getActivity() {
+		return activity;
 	}
-	public void setIdClent(Long idClent) {
-		this.idClent = idClent;
+	public void setActivity(Collection<Activity> activity) {
+		this.activity = activity;
 	}
-	public String getNonClient() {
-		return nonClient;
+	public Long getIdCustomer() {
+		return idCustomer;
 	}
-	public void setNonClient(String nonClient) {
-		this.nonClient = nonClient;
+	public void setIdCustomer(Long idCustomer) {
+		this.idCustomer = idCustomer;
+	}
+	public String getNonCustomer() {
+		return nonCustomer;
+	}
+	public void setNonCustomer(String nonCustomer) {
+		this.nonCustomer = nonCustomer;
 	}
 	public String getEmail() {
 		return email;
@@ -65,13 +76,17 @@ public class Customer implements Serializable {
 		this.phone = phone;
 	}
 	
-	@OneToOne(cascade = CascadeType.ALL)
-	public Address getAddress() {
+	@OneToMany(cascade = CascadeType.ALL)
+	public Collection<Address> getAddress() {
 		return address;
 	}
-	public void setAddress(Address address) {
+	public void setAddress(Collection<Address> address) {
 		this.address = address;
 	}
+	
+	
+	
+	
 	
 
 }

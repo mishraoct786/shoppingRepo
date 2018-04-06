@@ -4,6 +4,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Address {
@@ -23,6 +25,10 @@ public class Address {
 	
 	@Column
 	private String zipcode;
+	
+	@ManyToOne
+	@JoinColumn(name="idAddress")
+	private Customer customer;
 
 	public Long getIdAddress() {
 		return idAddress;
@@ -62,6 +68,14 @@ public class Address {
 
 	public void setZipcode(String zipcode) {
 		this.zipcode = zipcode;
+	}
+
+	public Customer getCustomer() {
+		return customer;
+	}
+
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
 	}
 	
 	

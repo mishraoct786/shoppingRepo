@@ -13,7 +13,7 @@
                            http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
  
       <context:annotation-config />
-  <context:component-scan base-package="org.mishra.com" /> 
+  <context:component-scan base-package="org.mishra.com.*" /> 
     <tx:annotation-driven />
        <bean id="persistenceExceptionTranslationPostProcessor"  class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor"/>
     
