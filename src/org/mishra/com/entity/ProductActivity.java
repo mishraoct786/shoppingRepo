@@ -1,5 +1,7 @@
 package org.mishra.com.entity;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -8,7 +10,12 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 @Entity
-public class ProductActivity {
+public class ProductActivity implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	@GeneratedValue(strategy= GenerationType.AUTO)
 	private Long id;
@@ -16,6 +23,10 @@ public class ProductActivity {
 	@ManyToOne
 	@JoinColumn(name="idproduct")
 	private Product product;
+	
+	@ManyToOne
+	@JoinColumn(name="idActivityClient")
+	private Activity activityClient;
 	
 	private int price;
 	private int quantity;
@@ -42,6 +53,12 @@ public class ProductActivity {
 	}
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
+	}
+	public Activity getActivityClient() {
+		return activityClient;
+	}
+	public void setActivityClient(Activity activityClient) {
+		this.activityClient = activityClient;
 	}
 	
 

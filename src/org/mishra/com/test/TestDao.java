@@ -25,7 +25,15 @@ public class TestDao {
 		}
 		catch(Exception ex)
 		{
+			System.out.println(""+ex.getMessage());
 			assertTrue(ex.getMessage(),false);
 		}
 	}
+	
+	  /*@Test
+	  public void typeAnnotations() {
+	    // assert
+	    AssertAnnotations.assertType(
+	        Activity.class, Entity.class, Table.class);
+	  }*/
 }

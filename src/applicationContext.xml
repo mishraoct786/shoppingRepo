@@ -13,14 +13,14 @@
                            http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
  
       <context:annotation-config />
-  <context:component-scan base-package="org.mishra.com.*" /> 
+  <context:component-scan base-package="org.mishra.com" /> 
     <tx:annotation-driven />
        <bean id="persistenceExceptionTranslationPostProcessor"  class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor"/>
     
     <bean id="dataSource"
         class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="com.mysql.jdbc.Driver" />
-        <property name="url" value="jdbc:mysql://localhost:3306/test" />
+        <property name="url" value="jdbc:mysql://localhost:3306/test2" />
         <property name="username" value="root" />
         <property name="password" value="root" />
     </bean>

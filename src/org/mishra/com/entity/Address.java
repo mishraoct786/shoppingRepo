@@ -1,17 +1,25 @@
 package org.mishra.com.entity;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 @Entity
-public class Address {
+public class Address implements Serializable {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long idAddress;
 	
 	@Column
@@ -27,7 +35,7 @@ public class Address {
 	private String zipcode;
 	
 	@ManyToOne
-	@JoinColumn(name="idAddress")
+	@JoinColumn(name="idCustomer")
 	private Customer customer;
 
 	public Long getIdAddress() {

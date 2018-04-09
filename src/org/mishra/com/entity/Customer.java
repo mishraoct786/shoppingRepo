@@ -3,15 +3,15 @@ package org.mishra.com.entity;
 import java.io.Serializable;
 import java.util.Collection;
 
-import javax.persistence.CascadeType;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
+
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
+
 
 @Entity
 public class Customer implements Serializable {
@@ -20,10 +20,7 @@ public class Customer implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 
-	public Customer() {
-		
-		// TODO Auto-generated constructor stub
-	}
+
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long idCustomer;
@@ -37,11 +34,11 @@ public class Customer implements Serializable {
 	@Column
 	private String phone;
 	
-	@JoinColumn
+	
 	@OneToMany(mappedBy="customer")
 	private Collection <Address> address;
 	
-	@OneToMany(mappedBy="client")
+	@OneToMany(mappedBy="client" )
 	private Collection  <Activity> activity;
 	
 	
@@ -76,7 +73,7 @@ public class Customer implements Serializable {
 		this.phone = phone;
 	}
 	
-	@OneToMany(cascade = CascadeType.ALL)
+	
 	public Collection<Address> getAddress() {
 		return address;
 	}

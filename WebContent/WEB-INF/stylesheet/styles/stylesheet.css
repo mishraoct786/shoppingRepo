@@ -1,0 +1,152 @@
+
+#loginfieldset
+{
+    border: solid 5px black;
+    border-radius: 4px;
+    padding-left: 12px;
+    position: relative;
+    font-size: 130%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:  -4%; 
+    width: 350px;
+}
+legend
+{
+   
+    color:  black;
+    
+}
+#loginbtn
+{
+    width: 150px;
+    margin-bottom: 10px;
+    border: solid 2px;
+    font-size: 120%;
+    font-family:  cursive;
+    border-radius: 12px;
+    
+}
+#d1
+{
+    //background-image: url('../images/background3.jpg') ;
+    // image: url('../images/background3.jpg') ;
+    //background-repeat: no-repeat; 
+    //background-size: cover;
+    font-family:  cursive;
+    height:5em;
+    width: 100%;
+   
+}
+#d2
+{
+    //background-image: url('../images/background3.jpg') ;
+    // image: url('../images/background3.jpg') ;
+    //background-repeat: no-repeat; 
+    //background-size: cover;
+    font-family:  cursive;
+    height:2.2em;
+    width: 100%;
+   
+}
+#div4
+{
+    
+        width: 70%;
+      
+       margin: 0 auto;
+        
+}
+
+#img1
+{
+    height:100%;
+    width: 100%;
+}
+#img2
+{
+    height:100%;
+    width: 100%;
+}
+#logo
+{
+    text-align: center;
+}
+p,li
+{
+    font-size: 130%;
+}
+a
+{
+    text-decoration: none;
+    color: steelblue;
+}
+#logout
+{
+    position:fixed;
+    left: 90%;
+    top:  2%;
+}
+#img3
+{
+    position:absolute;
+    left: 15em;
+    top:  2em;
+}
+#container
+{
+    position:absolute;
+    
+    top:  5em;
+}
+
+/*/for curousel*/
+#divx
+        {
+            
+    font-family:  cursive;
+        height: 30%;
+        width: 50%;
+        }
+   #m1{
+    height: 100%;
+        width: 100%;
+}
+  #m2
+  {
+    height: 100%;
+        width: 100%;
+}
+  #m3{
+    height: 100%;
+        width: 100%;
+}
+/* end carousel css*/
+/* button b1 css*/
+#b1 
+{
+    position:relative;
+     
+    left: 30em;
+     width: 20%;
+   
+}
+#div_b1{
+    position:relative;
+    bottom: -15em;
+}
+#myCarousel{
+    margin: 0 auto;
+    position:relative;
+    top: 15em;
+    
+       width: 70%;
+}
+#main{
+    border: dashed  #000 1px;
+     position:relative;
+     top: 15em;
+      width: 50%;
+      left: 15%;
+       height: -12%;
+}

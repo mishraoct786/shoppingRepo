@@ -1,0 +1,101 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="styles/stylesheet.css">
+  <link rel="stylesheet" type="text/css" href="styles/car.css">
+
+<script type="text/javascript" src="jquery.min.js"></script>
+
+    </head>
+    <body>
+        <div id ="1">TODO write content</div>
+        Name:<input type="text" id="name"/><br/>
+    Email:<input type="text" id="email"/>
+        <script>
+$(document).ready(function(){
+    $("#1").bind('hover',function(){
+       
+      
+    /*   $.ajax({
+        type: "GET",
+      data: 'ID=' + idel,
+        dataType:'json',
+        async: false,
+        url: "index.jsp?",
+        success: function(data) {
+            alert("hi");
+           var array_data = String(data).split("\n");
+        var cl = array_data[0],
+            mt = array_data[1],
+            ot = array_data[2];
+        alert(cl,ml,ot);
+            alert(" ");
+            },
+        error: function() {    
+            alert("error ")
+        }
+        });
+        
+        var parameters = { p1 : "val1", p2 : "val2"};
+$.getJSON("index.jsp", parameters )
+    .done(function(data) {
+        alert();
+        $("#1").html(data.data1);
+    }) ;
+        
+        
+        $.ajax({
+        url: "/index.jsp",
+        dataType: 'json',
+        data: {
+            name : "The name",
+            desc : "The description"
+        }
+    })
+    .done (function(data) { alert("Success: " + data.data1) ; })
+    .fail   (function()     { alert("Error")   ; });
+    
+          
+    
+        $.ajax({
+            type: 'GET',
+            url: 'index.jsp',
+            datatype:'text',
+            success: function(data) {
+                //alert(data);
+               // debugger;
+                var city=data;
+                for(var i in city)
+                {
+                    alert(city[i]);
+                    
+                }
+         
+            }
+        });*/
+        var count=1;
+        $.ajax({
+                    url:'index.jsp',
+                    data: {
+            name : count
+                    },
+                    
+                    type:'post',
+                    dataType: 'json',
+                    success: function(data) {
+                       
+                      $('#name').val(data.name);
+                        $('#email').val(data.email);
+                    }
+                });
+    });
+ });
+              </script>
+    </body>
+</html>
