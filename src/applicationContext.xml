@@ -14,6 +14,9 @@
  
       <context:annotation-config />
   <context:component-scan base-package="org.mishra.com" /> 
+  <context:component-scan base-package="org.mishra.com.controller" /> 
+   <context:component-scan base-package="org.mishra.com.service" /> 
+  
     <tx:annotation-driven />
        <bean id="persistenceExceptionTranslationPostProcessor"  class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor"/>
     
@@ -47,6 +50,10 @@
    <bean  class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor"/>
     
     <tx:annotation-driven transaction-manager="transactionManager"/>
-    </beans>
+  <bean id="categorieService1" class="org.mishra.com.service.CategorieServiceImpl"></bean>
+    
+     <bean id="categorieDao1" class="org.mishra.com.dao.CategorieDaoImpl"></bean>
+  
+     </beans>
     
     
