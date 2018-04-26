@@ -10,5 +10,5 @@ public interface CategorieDao {
 	public Long getIdCategoriesByObject(Categories c);
 	public Categories getCategorie(Long Idcat);
 	public void modifierCategaorie(Categories c);
-	
+	public long saveCategorie(Categories c);
 }

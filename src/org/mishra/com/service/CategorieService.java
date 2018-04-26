@@ -9,4 +9,7 @@ public interface CategorieService {
 	
 	public List<Categories> listCategories();
 
+	public void modifierCategaorie(Categories c);
+	public long saveCategorie(Categories c);
+
 }

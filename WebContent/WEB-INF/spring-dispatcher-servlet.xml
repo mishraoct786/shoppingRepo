@@ -10,13 +10,18 @@
  http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
        <context:annotation-config /> 
        <mvc:annotation-driven />
-       <context:component-scan base-package="org.mishra.com.controller" />
-              <context:component-scan base-package="org.mishra.com.controller.AdminCategoriesController" />
+     
+     <context:component-scan base-package="org.mishra.com.*" />
+<!--        <context:component-scan base-package="org.mishra.com.controller" />
+ -->      <!--  <context:component-scan base-package="org.mishra.com.advice" /> -->
        
-      <!--  <mvc:resources mapping="/resources/**" location="/resources/" />
-      <bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping" />
+       <!-- <context:component-scan base-package="org.mishra.com.dao" />-->
+       
+       
+       <!-- <mvc:resources mapping="/resources/**" location="/resources/" />
+       <bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping" />
        <bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter" />
- 
+ -->
  
       <bean id="viewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver">
           <property name="viewClass" value="org.springframework.web.servlet.view.JstlView" />
@@ -24,22 +29,12 @@
           <property name="suffix" value=".jsp" />
      </bean>
      
-         <bean  class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+           <bean  class="org.springframework.web.servlet.view.InternalResourceViewResolver">
            <property name="prefix" value="/WEB-INF/views/" />
           <property name="suffix" value=".jsp" />
-     </bean> -->
+     </bean>
     <!--  <mvc:view-controller path="/home.action" view-name="home"></mvc:view-controller>
      <mvc:view-controller path="/customer/customerForm.action" view-name="addCustomer"></mvc:view-controller>
  -->
- 
- <bean
-	  class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-	  <property name="prefix">
-		<value>/WEB-INF/views/</value>
-	  </property>
-	  <property name="suffix">
-		<value>.jsp</value>
-	  </property>
-	</bean>
  
  </beans>

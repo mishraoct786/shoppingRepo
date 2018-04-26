@@ -1,13 +1,17 @@
 package org.mishra.com.dao;
 
 import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 
 import org.mishra.com.entity.Customer;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Role;
+import org.springframework.stereotype.Repository;
 
+
+@Repository(value="customerDao")
 public class CustomerDaoImpl implements CustomerDao{
-	@Autowired
+	
+	@PersistenceContext
 	private EntityManager em;
 
 	@Override

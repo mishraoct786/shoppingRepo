@@ -1,17 +1,20 @@
 package org.mishra.com.entity;
 
 import java.io.Serializable;
+import java.util.Arrays;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Lob;
-import javax.validation.constraints.Size;
+
+import org.springframework.stereotype.Component;
 
 
 
 @Entity
+@Component
 public class Categories implements Serializable {
 	/**
 	 * 
@@ -23,14 +26,26 @@ public class Categories implements Serializable {
 	private long idCategorie;
 	
 	//@NotEmpty
-	@Size(max=4,min=20)
-	
+	//@Size(max=4,min=100)
 	private String nonCategorie;
+	
 	private String description;
 	private String nonPhoto;
 	
 	@Lob
 	private byte[] photo;
+
+	public Categories(){
+		
+	}
+
+	public Categories(String nonCategorie, String description, String nonPhoto, byte[] photo) {
+		
+		this.nonCategorie = nonCategorie;
+		this.description = description;
+		this.nonPhoto = nonPhoto;
+		this.photo = photo;
+	}
 
 	public long getIdCategorie() {
 		return idCategorie;
@@ -70,6 +85,12 @@ public class Categories implements Serializable {
 
 	public void setPhoto(byte[] photo) {
 		this.photo = photo;
+	}
+
+	@Override
+	public String toString() {
+		return "Categories [idCategorie=" + idCategorie + ", nonCategorie=" + nonCategorie + ", description="
+				+ description + ", nonPhoto=" + nonPhoto + ", photo=" + Arrays.toString(photo) + "]";
 	}
 	
 	/*@OneToMany(mappedBy="categorie")

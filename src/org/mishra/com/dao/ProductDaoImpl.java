@@ -3,16 +3,16 @@ package org.mishra.com.dao;
 import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
-import org.hibernate.action.internal.EntityIdentityInsertAction;
-import org.mishra.com.entity.Customer;
 import org.mishra.com.entity.Product;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
+@Repository(value = "productDao")
 public class ProductDaoImpl implements ProductDao {
 
-	@Autowired
+	@PersistenceContext
 	private EntityManager em;
 
 	@Override

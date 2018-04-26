@@ -13,13 +13,18 @@
                            http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
  
       <context:annotation-config />
-  <context:component-scan base-package="org.mishra.com" /> 
-  <context:component-scan base-package="org.mishra.com.controller" /> 
-   <context:component-scan base-package="org.mishra.com.service" /> 
-  
-    <tx:annotation-driven />
-       <bean id="persistenceExceptionTranslationPostProcessor"  class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor"/>
+  <!-- <context:component-scan base-package="org.mishra.com" /> 
+  <context:component-scan base-package="org.mishra.com.entity" /> 
+  <context:component-scan base-package="org.mishra.com.controller" />
+ 
+   <context:component-scan base-package="org.mishra.com.service" />
+   <context:component-scan base-package="org.mishra.com.dao" />   --> 
+   
+    <context:component-scan base-package="org.mishra.com.*"/>
     
+    <tx:annotation-driven />
+     <bean id="persistenceExceptionTranslationPostProcessor"  class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor"/>
+     
     <bean id="dataSource"
         class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="com.mysql.jdbc.Driver" />
@@ -36,7 +41,8 @@
      <bean id="entityManagerFactory" 
      class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"
         p:dataSource-ref="dataSource" 
-         p:persistenceUnitName="myPersistenceUnit" />
+         p:persistenceUnitName="myPersistenceUnit" 
+        p:packagesToScan ="org.mishra.com.entity"/>
      
      
      
@@ -47,13 +53,21 @@
    <!-- <bean id="encoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder">
     <constructor-arg value ="12">
     </constructor-arg>  </bean> -->
-   <bean  class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor"/>
+    <bean  class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor"/>
+ 
+  <!-- <bean id="categorieServiceImpl" class="org.mishra.com.service.CategorieServiceImpl"></bean>
     
-    <tx:annotation-driven transaction-manager="transactionManager"/>
-  <bean id="categorieService1" class="org.mishra.com.service.CategorieServiceImpl"></bean>
+     <bean id="categorieDaoImpl" class="org.mishra.com.dao.CategorieDaoImpl"></bean>
+    --> 
     
-     <bean id="categorieDao1" class="org.mishra.com.dao.CategorieDaoImpl"></bean>
-  
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+ <property name="maxUploadSize" value="268435456"/>
+</bean>
+
+<!-- <bean id="multipartResolver"   
+class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/>  
+ -->
+  <tx:annotation-driven transaction-manager="transactionManager"/>
      </beans>
     
     
